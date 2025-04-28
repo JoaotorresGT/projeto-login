@@ -30,9 +30,8 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    
     overflow: hidden;
-
     background-color: white;
     width: 280px;
     height: 510px;
@@ -41,6 +40,7 @@ section#login {
 
     transition: width .3s, height .3s;
     transition-timing-function: ease;
+    transform: translate(-50%, -50%);
 }
 
 section#login > #imagem {
@@ -66,19 +66,44 @@ div#formulario > p {
     font-size: 0.8em;
 }
 
-/* esta dando errado e n sei pq */
-form > div.campo {
+
+form > .campo {
     background-color: #5f2c82;
     width: 100%;
-    display: block;
-    width: 40px;
-    border-radius: 5px;
+    display: flex; /* FLEX para alinhar ícone e input */
+    align-items: center; /* Centralizar verticalmente */
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
-div.campo > label {
-    display: none;
 
+div .campo > label {
+    display: none;
+}
+
+div.campo > i {
+    color: white;
+    background-color: #5f2c82; /* Cor roxa do tema */
+    font-size: 2em;
+    width: 40px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+div.campo > input {
+    background-color: #49cfcd;
+    font-size: 1em;
+    width: calc(100% - 44px); /* Ajustando para caber ao lado do ícone */
+    height: 100%;
+    
+    border: 0px;
+    border-radius: 8px;
+    padding: 4px;
+    transform: translateY(-0.1px);
+}
+
+div.campo > input:focus-within {
+    background-color: white;
 }
 
 form > input[type=submit] {
